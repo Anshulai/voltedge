@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VoltEdge Pvt. Ltd.</title>
+
+<!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* ==================================================
+                    ROOT
+================================================== */
+
+:root{
+
+    --bg-dark:#050505;
+    --card-bg:#101010;
+
+    --primary:#ff9d00;
+    --secondary:#ff6a00;
+
+    --text-main:#ffffff;
+    --text-muted:#9f9f9f;
+
+    --font-heading:'Orbitron',sans-serif;
+    --font-body:'Poppins',sans-serif;
+}
+
+/* ==================================================
+                    GLOBAL
+================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+html{
+    height:100%;
+}
+
+body{
+
+    background:var(--bg-dark);
+
+    color:white;
+
+    font-family:var(--font-body);
+
+    overflow-x:hidden;
+
+    min-height:100%;
+}
+
+/* ==================================================
+                    SCROLLBAR
+================================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#050505;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff9d00;
+}
+
+/* ==================================================
+            CIRCUIT SVG BACKGROUND
+================================================== */
+
+svg.circuit-path{
+
+    position:fixed;
+
+    bottom:50%;
+    right:50%;
+
+    transform:translate(50%,50%);
+
+    z-index:-10;
+
+    opacity:0.18;
+
+    height:200%;
+
+    width:auto;
+}
+
+.path{
+
+    fill:none;
+
+    stroke-width:2;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    stroke-dasharray:1000;
+
+    stroke-dashoffset:1000;
+
+    animation:draw 15s linear infinite;
+}
+
+.path-01{
+    animation-delay:0s;
+}
+
+.path-02{
+    animation-delay:1s;
+}
+
+.path-03{
+    animation-delay:2s;
+}
+
+.path-04{
+    animation-delay:3s;
+}
+
+.path-05{
+    animation-delay:4s;
+}
+
+/* ==================================================
+                RESPONSIVE SVG
+================================================== */
+
+@media screen and (min-width:768px){
+
+    svg.circuit-path{
+
+        height:auto;
+
+        width:200%;
+    }
+}
+
+/* ==================================================
+                ANIMATION
+================================================== */
+
+@keyframes draw{
+
+    0%{
+
+        stroke-dashoffset:1000;
+
+        opacity:0.1;
+    }
+
+    100%{
+
+        stroke-dashoffset:0;
+
+        opacity:1;
+    }
+}
+
+/* ==================================================
+                    NAVBAR
+================================================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    z-index:999;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 60px;
+
+    background:rgba(0,0,0,0.5);
+
+    backdrop-filter:blur(10px);
+
+    border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+.logo{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    font-family:var(--font-heading);
+}
+
+.logo span{
+
+    color:#ff9d00;
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:35px;
+
+    list-style:none;
+}
+
+.nav-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    position:relative;
+
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#ff9d00;
+}
+
+.nav-links a::after{
+
+    content:'';
+
+    position:absolute;
+
+    left:0;
+    bottom:-5px;
+
+    width:0%;
+
+    height:2px;
+
+    background:#ff9d00;
+
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* ==================================================
+                    HERO
+================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:0 20px;
+}
+
+.hero-content{
+
+    max-width:900px;
+}
+
+.hero-content h1{
+
+    font-size:4rem;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+
+    font-family:var(--font-heading);
+}
+
+.hero-content h1 span{
+    color:#ff9d00;
+}
+
+.hero-content p{
+
+    color:var(--text-muted);
+
+    font-size:1.1rem;
+
+    line-height:1.9;
+
+    margin-bottom:40px;
+}
+
+/* ==================================================
+                    BUTTONS
+================================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.btn-primary,
+.btn-secondary{
+
+    padding:14px 32px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    transition:0.3s;
+
+    font-weight:600;
+}
+
+.btn-primary{
+
+    background:#ff9d00;
+
+    color:black;
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-5px);
+}
+
+.btn-secondary{
+
+    border:1px solid #ff9d00;
+
+    color:#ff9d00;
+}
+
+.btn-secondary:hover{
+
+    background:#ff9d00;
+
+    color:black;
+}
+
+/* ==================================================
+                    SECTIONS
+================================================== */
+
+.section-padding{
+    padding:100px 0;
+}
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+}
+
+.section-header{
+
+    text-align:center;
+
+    margin-bottom:60px;
+}
+
+.section-header h2{
+
+    font-size:2.8rem;
+
+    font-family:var(--font-heading);
+
+    color:#ff9d00;
+}
+
+.neon-line{
+
+    width:120px;
+
+    height:4px;
+
+    background:#ff9d00;
+
+    margin:20px auto;
+}
+
+/* ==================================================
+                    SERVICES
+================================================== */
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+}
+
+.service-card{
+
+    background:#101010;
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    border-radius:20px;
+
+    padding:40px 30px;
+
+    transition:0.3s;
+}
+
+.service-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#ff9d00;
+}
+
+.icon-box{
+
+    width:80px;
+    height:80px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:18px;
+
+    background:rgba(255,157,0,0.08);
+
+    margin-bottom:25px;
+
+    color:#ff9d00;
+
+    font-size:2rem;
+}
+
+.service-card h3{
+
+    margin-bottom:15px;
+
+    font-family:var(--font-heading);
+}
+
+.service-card p{
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+}
+
+/* ==================================================
+                    TECHNOLOGY
+================================================== */
+
+.tech-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:25px;
+}
+
+.tech-item{
+
+    background:#101010;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    transition:0.3s;
+}
+
+.tech-item:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#ff9d00;
+}
+
+.tech-item i{
+
+    font-size:2.5rem;
+
+    margin-bottom:15px;
+
+    color:#ff9d00;
+}
+
+/* ==================================================
+                    CONTACT
+================================================== */
+
+.contact-form{
+
+    max-width:700px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    padding:18px;
+
+    background:#101010;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:10px;
+
+    color:white;
+
+    outline:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    border-color:#ff9d00;
+}
+
+.contact-form textarea{
+    height:180px;
+}
+
+/* ==================================================
+                    FOOTER
+================================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    border-top:1px solid rgba(255,255,255,0.08);
+
+    color:#9f9f9f;
+}
+
+/* ==================================================
+                    MOBILE
+================================================== */
+
+@media(max-width:900px){
+
+    .hero-content h1{
+        font-size:2.7rem;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .navbar{
+        padding:20px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ==================================================
+            CIRCUIT SVG BACKGROUND
+================================================== -->
+
+<svg class="circuit-path"
+viewBox="0 0 2000 2000"
+xmlns="http://www.w3.org/2000/svg">
+
+<!-- PATH 1 -->
+
+<path
+class="path path-01"
+stroke="#ff9d00"
+
+d="
+M 100 300
+H 600
+V 700
+H 1200
+V 1000
+H 1800
+"
+/>
+
+<!-- PATH 2 -->
+
+<path
+class="path path-02"
+stroke="#ff6a00"
+
+d="
+M 300 100
+V 500
+H 900
+V 1400
+H 1700
+"
+/>
+
+<!-- PATH 3 -->
+
+<path
+class="path path-03"
+stroke="#ffcc00"
+
+d="
+M 100 1600
+H 700
+V 900
+H 1500
+"
+/>
+
+<!-- PATH 4 -->
+
+<path
+class="path path-04"
+stroke="#ff9d00"
+
+d="
+M 1900 200
+H 1300
+V 600
+H 800
+V 1300
+"
+/>
+
+<!-- PATH 5 -->
+
+<path
+class="path path-05"
+stroke="#ff6a00"
+
+d="
+M 1800 1800
+H 1200
+V 1000
+H 400
+"
+/>
+
+</svg>
+
+<!-- ==================================================
+                    NAVBAR
+================================================== -->
+
+<nav class="navbar">
+
+<div class="logo">
+Volt<span>Edge</span>
+</div>
+
+<ul class="nav-links">
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#services">Services</a></li>
+
+<li><a href="#technology">Technology</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<!-- ==================================================
+                    HERO
+================================================== -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>
+
+Future of
+<span>AI Automation</span>
+& Embedded Systems
+
+</h1>
+
+<p>
+
+VoltEdge Pvt. Ltd. provides Smart Agrotech Solutions,
+Smart Home Automation, AI Surveillance Systems,
+Robotics & Embedded Technology.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#services" class="btn-primary">
+
+Explore Services
+
+</a>
+
+<a href="#contact" class="btn-secondary">
+
+Contact Us
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+                    SERVICES
+================================================== -->
+
+<section class="section-padding" id="services">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>Our Services</h2>
+
+<div class="neon-line"></div>
+
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<div class="icon-box">
+<i class="fas fa-seedling"></i>
+</div>
+
+<h3>Smart Agrotech</h3>
+
+<p>
+
+AI-powered farming systems,
+smart irrigation & crop monitoring.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="icon-box">
+<i class="fas fa-house-signal"></i>
+</div>
+
+<h3>Smart Home</h3>
+
+<p>
+
+IoT home automation,
+voice assistant & smart security systems.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="icon-box">
+<i class="fas fa-eye"></i>
+</div>
+
+<h3>AI Surveillance</h3>
+
+<p>
+
+Face recognition,
+motion tracking & intelligent monitoring.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+                    TECHNOLOGY
+================================================== -->
+
+<section class="section-padding" id="technology">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>Technologies</h2>
+
+<div class="neon-line"></div>
+
+</div>
+
+<div class="tech-grid">
+
+<div class="tech-item">
+
+<i class="fab fa-python"></i>
+
+<h3>Python</h3>
+
+</div>
+
+<div class="tech-item">
+
+<i class="fas fa-microchip"></i>
+
+<h3>Arduino</h3>
+
+</div>
+
+<div class="tech-item">
+
+<i class="fas fa-server"></i>
+
+<h3>Raspberry Pi</h3>
+
+</div>
+
+<div class="tech-item">
+
+<i class="fas fa-wifi"></i>
+
+<h3>ESP32</h3>
+
+</div>
+
+<div class="tech-item">
+
+<i class="fas fa-brain"></i>
+
+<h3>TensorFlow</h3>
+
+</div>
+
+<div class="tech-item">
+
+<i class="fas fa-eye"></i>
+
+<h3>OpenCV</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+                    CONTACT
+================================================== -->
+
+<section class="section-padding" id="contact">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>Contact Us</h2>
+
+<div class="neon-line"></div>
+
+</div>
+
+<form class="contact-form">
+
+<input type="text"
+placeholder="Your Name">
+
+<input type="email"
+placeholder="Your Email">
+
+<textarea
+placeholder="Your Message"></textarea>
+
+<button class="btn-primary">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+                    FOOTER
+================================================== -->
+
+<footer>
+
+© 2026 VoltEdge Pvt. Ltd.
+— Powering the Future with AI & Automation.
+
+</footer>
+
+</body>
+<!-- ==================================================
+        CIRCUIT ANIMATION BACKGROUND
+        ADD THIS JUST BELOW <body>
+================================================== -->
+
+<svg class="circuit-path"
+viewBox="0 0 2000 2000"
+xmlns="http://www.w3.org/2000/svg">
+
+    <!-- PATH 1 -->
+    <path
+    class="path path-01"
+    stroke="#ff9d00"
+
+    d="
+    M 100 300
+    H 600
+    V 700
+    H 1200
+    V 1000
+    H 1800
+    " />
+
+    <!-- PATH 2 -->
+    <path
+    class="path path-02"
+    stroke="#ff6a00"
+
+    d="
+    M 300 100
+    V 500
+    H 900
+    V 1400
+    H 1700
+    " />
+
+    <!-- PATH 3 -->
+    <path
+    class="path path-03"
+    stroke="#ffcc00"
+
+    d="
+    M 100 1600
+    H 700
+    V 900
+    H 1500
+    " />
+
+    <!-- PATH 4 -->
+    <path
+    class="path path-04"
+    stroke="#ff9d00"
+
+    d="
+    M 1900 200
+    H 1300
+    V 600
+    H 800
+    V 1300
+    " />
+
+    <!-- PATH 5 -->
+    <path
+    class="path path-05"
+    stroke="#ff6a00"
+
+    d="
+    M 1800 1800
+    H 1200
+    V 1000
+    H 400
+    " />
+
+</svg>
+</html>
